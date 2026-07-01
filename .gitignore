@@ -1,0 +1,21 @@
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Local environment
+.env
+.env.*
+!.env.example
+
+# Editor state
+.vscode/
+.idea/
+
+# Build outputs
+dist/
+build/
+coverage/
+tmp/
+temp/

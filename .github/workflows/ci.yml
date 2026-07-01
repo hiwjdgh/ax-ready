@@ -1,0 +1,76 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Check required files
+        shell: bash
+        run: |
+          required=(
+            "SKILL.md"
+            "package.json"
+            "bin/ax-ready.js"
+            "agents/openai.yaml"
+            "references/readiness-checklist.md"
+            "references/output-map.md"
+            "assets/templates/AGENTS.md"
+            "assets/templates/CLAUDE.md"
+            "assets/templates/GEMINI.md"
+            "memory/project-memory.md"
+            "memory/decision-log.md"
+            "references/frameworks/php.md"
+            "references/frameworks/nextjs.md"
+            "references/frameworks/nestjs.md"
+            "docs/release-strategy.md"
+          )
+
+          for path in "${required[@]}"; do
+            if [ ! -e "$path" ]; then
+              echo "Missing required file: $path"
+              exit 1
+            fi
+          done
+
+      - name: Check public docs avoid local paths
+        shell: bash
+        run: |
+          if grep -R "C:\\\\Users" README.md SKILL.md AGENTS.md references assets .github docs; then
+            echo "Found local user path in public docs"
+            exit 1
+          fi
+
+      - name: Validate npm package
+        run: |
+          npm run check
+          npm pack --dry-run
+
+      - name: Test installer output
+        shell: bash
+        run: |
+          target="$RUNNER_TEMP/ax-ready-install"
+          node bin/ax-ready.js install --target "$target" --force
+
+          test -f "$target/ax-ready/SKILL.md"
+          test -f "$target/ax-ready/agents/openai.yaml"
+          test -f "$target/ax-ready/assets/templates/AGENTS.md"
+          test -f "$target/ax-ready/assets/templates/CLAUDE.md"
+          test -f "$target/ax-ready/assets/templates/GEMINI.md"
+          test -f "$target/ax-ready/references/frameworks/nextjs.md"
+
+          if [ -e "$target/ax-ready/memory" ]; then
+            echo "memory/ must not be installed into the runtime skill directory"
+            exit 1
+          fi

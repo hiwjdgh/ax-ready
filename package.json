@@ -1,0 +1,34 @@
+{
+  "name": "ax-ready",
+  "version": "0.1.0",
+  "description": "Prepare legacy projects for AI agent coding with multi-agent ready documentation.",
+  "license": "MIT",
+  "type": "commonjs",
+  "bin": {
+    "ax-ready": "./bin/ax-ready.js"
+  },
+  "files": [
+    "SKILL.md",
+    "agents/",
+    "assets/",
+    "references/",
+    "bin/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "check": "node --check bin/ax-ready.js",
+    "pack:dry": "npm pack --dry-run"
+  },
+  "keywords": [
+    "ai-agent",
+    "codex",
+    "claude-code",
+    "gemini",
+    "skill",
+    "legacy-code"
+  ],
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,7 @@
+interface:
+  display_name: "AX Ready"
+  short_description: "AI Agent 코딩 준비와 메모리 구축."
+  default_prompt: "Use $ax-ready to prepare this project for reliable AI agent coding, with Korean-first docs and persistent memory."
+
+policy:
+  allow_implicit_invocation: true
