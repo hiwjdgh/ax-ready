@@ -15,3 +15,5 @@
 - GitHub source of truth, npm install channel 기준의 release strategy 문서를 추가했다.
 - GitHub Actions CI와 npm publish workflow를 추가했다.
 - 앞으로 수정 작업 후 검증이 통과하면 커밋까지 진행한다는 운영 규칙을 추가했다.
+- GitHub와 npm 최초 배포가 완료되었고, npm package name은 `ax-ready`로 확정되었다.
+- npm package description은 한국어로 유지한다.

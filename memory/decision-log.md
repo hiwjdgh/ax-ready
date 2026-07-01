@@ -50,6 +50,18 @@
 - 이유: Git tag, release note, npm version을 연결해 배포 이력을 추적하기 쉽다.
 - 영향: repository secret `NPM_TOKEN`이 필요하며, workflow는 `npm publish --provenance`를 사용한다.
 
+## 2026-07-01: npm package name은 `ax-ready`로 확정한다
+
+- 결정: npm package name은 scoped package가 아닌 `ax-ready`를 사용한다.
+- 이유: 최초 npm 배포가 `ax-ready` 이름으로 완료되었다.
+- 영향: README, package metadata, release 문서에서 `ax-ready` 이름을 유지한다.
+
+## 2026-07-01: npm description은 한국어로 유지한다
+
+- 결정: npm package description은 `AI Agent 코딩이 가능하도록 기존 프로젝트를 준비하는 스킬`을 사용한다.
+- 이유: 초기 배포 전략이 한국어 우선이기 때문이다.
+- 영향: `package.json`의 한국어 description 변경은 의도된 배포 변경으로 취급한다.
+
 ## 2026-07-01: 수정 후 자동 커밋까지 진행한다
 
 - 결정: Agent가 이 저장소를 수정하면 검증 후 커밋까지 진행한다.

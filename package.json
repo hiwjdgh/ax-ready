@@ -1,7 +1,7 @@
 {
   "name": "ax-ready",
   "version": "0.1.0",
-  "description": "Prepare legacy projects for AI agent coding with multi-agent ready documentation.",
+  "description": "AI Agent 코딩이 가능하도록 기존 프로젝트를 준비하는 스킬",
   "license": "MIT",
   "type": "commonjs",
   "bin": {
