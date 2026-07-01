@@ -62,6 +62,12 @@
 - 이유: `GITHUB_TOKEN`으로 생성된 release 이벤트는 다른 workflow를 자동 트리거하지 않아 `npm-publish.yml`이 실행되지 않았다.
 - 영향: `npm-publish.yml`은 수동 Release 또는 publish 재시도용 fallback으로 유지한다.
 
+## 2026-07-01: npm provenance용 repository metadata를 명시한다
+
+- 결정: `package.json`에 repository, bugs, homepage metadata를 추가한다.
+- 이유: `npm publish --provenance`는 provenance의 GitHub repository와 `package.json` repository URL이 일치해야 한다.
+- 영향: repository URL은 `https://github.com/hiwjdgh/ax-ready`로 유지한다.
+
 ## 2026-07-01: npm package name은 `ax-ready`로 확정한다
 
 - 결정: npm package name은 scoped package가 아닌 `ax-ready`를 사용한다.

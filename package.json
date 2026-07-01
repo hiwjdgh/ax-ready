@@ -3,6 +3,14 @@
   "version": "0.2.0",
   "description": "AI Agent 코딩이 가능하도록 기존 프로젝트를 준비하는 스킬",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hiwjdgh/ax-ready"
+  },
+  "bugs": {
+    "url": "https://github.com/hiwjdgh/ax-ready/issues"
+  },
+  "homepage": "https://github.com/hiwjdgh/ax-ready#readme",
   "type": "commonjs",
   "bin": {
     "ax-ready": "./bin/ax-ready.js"
