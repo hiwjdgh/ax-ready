@@ -46,11 +46,13 @@ Semantic Versioning을 따른다.
 5. GitHub Actions에서 `Release` workflow를 수동 실행한다.
    - workflow: `.github/workflows/release.yml`
    - input: `patch`, `minor`, `major`
-   - workflow가 `npm version`, version commit, tag push, GitHub Release 생성을 처리한다.
+   - workflow가 `npm version`, version commit, tag push, GitHub Release 생성, npm publish를 처리한다.
 
 6. npm publish를 확인한다.
 
-   GitHub Release가 published 상태가 되면 `.github/workflows/npm-publish.yml`이 실행된다.
+   `Release` workflow의 `Publish to npm` step이 성공했는지 확인한다.
+
+   publish만 재시도해야 할 때는 `.github/workflows/npm-publish.yml`을 수동 실행한다.
 
 ## GitHub Actions 전략
 
@@ -67,16 +69,18 @@ CI는 PR과 `main` push에서 배포 전 검증을 담당한다.
 - workflow: `.github/workflows/release.yml`
 - trigger: 수동 `workflow_dispatch`
 - input: `patch`, `minor`, `major`
-- 처리: 검증, `npm version`, commit/tag push, GitHub Release 생성
+- 처리: 검증, `npm version`, commit/tag push, GitHub Release 생성, npm publish
 
-npm publish는 GitHub Release 발행 시 실행한다.
+npm publish fallback workflow도 제공한다.
 
 - workflow: `.github/workflows/npm-publish.yml`
-- trigger: GitHub Release `published`
+- trigger: GitHub Release `published`, 또는 수동 `workflow_dispatch`
 - secret: `NPM_TOKEN`
 - publish command: `npm publish --provenance`
 
 공개 배포 전 GitHub repository settings에서 `NPM_TOKEN` secret을 추가해야 한다.
+
+주의: GitHub Actions의 `GITHUB_TOKEN`으로 생성한 release 이벤트는 다른 workflow를 자동 트리거하지 않는다. 따라서 기본 배포는 `release.yml` 안에서 npm publish까지 수행한다.
 
 ## GitHub 저장소 설정 권장값
 

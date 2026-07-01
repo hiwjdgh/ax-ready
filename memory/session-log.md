@@ -20,3 +20,4 @@
 - 사용자 프로젝트 산출물 규칙에 `docs/readiness/`와 조건부 `docs/db/`를 추가했다.
 - DB 지식이 부족하면 사용자에게 DDL/stored procedure/business rule을 요청하고 `docs/db/required-knowledge.md`에 남기도록 정리했다.
 - version bump, tag push, GitHub Release 생성을 자동화하는 `Release` workflow를 추가했다.
+- `GITHUB_TOKEN` release 이벤트가 `npm-publish.yml`을 트리거하지 않는 문제를 확인하고, `release.yml`에서 npm publish까지 수행하도록 수정했다.

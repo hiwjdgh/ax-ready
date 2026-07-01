@@ -83,7 +83,7 @@ npm run check
 npm pack --dry-run
 ```
 
-GitHub Actions는 PR/push 검증용 CI와 npm publish workflow로 나뉜다.
+GitHub Actions는 PR/push 검증용 CI, release 자동화, npm publish fallback workflow로 나뉜다.
 
 - `.github/workflows/ci.yml`
 - `.github/workflows/release.yml`

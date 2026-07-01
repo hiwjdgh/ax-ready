@@ -56,6 +56,12 @@
 - 이유: 사용자가 로컬에서 `npm version`, `git push`, tag push, release note 작성을 반복하지 않기 위해서다.
 - 영향: 배포 시 GitHub Actions의 `Release` workflow에서 `patch`, `minor`, `major` 중 하나만 선택하면 된다.
 
+## 2026-07-01: release workflow에서 npm publish까지 수행한다
+
+- 결정: `.github/workflows/release.yml` 안에서 GitHub Release 생성 후 `npm publish --provenance`를 실행한다.
+- 이유: `GITHUB_TOKEN`으로 생성된 release 이벤트는 다른 workflow를 자동 트리거하지 않아 `npm-publish.yml`이 실행되지 않았다.
+- 영향: `npm-publish.yml`은 수동 Release 또는 publish 재시도용 fallback으로 유지한다.
+
 ## 2026-07-01: npm package name은 `ax-ready`로 확정한다
 
 - 결정: npm package name은 scoped package가 아닌 `ax-ready`를 사용한다.
