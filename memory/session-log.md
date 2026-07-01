@@ -19,3 +19,4 @@
 - npm package description은 한국어로 유지한다.
 - 사용자 프로젝트 산출물 규칙에 `docs/readiness/`와 조건부 `docs/db/`를 추가했다.
 - DB 지식이 부족하면 사용자에게 DDL/stored procedure/business rule을 요청하고 `docs/db/required-knowledge.md`에 남기도록 정리했다.
+- version bump, tag push, GitHub Release 생성을 자동화하는 `Release` workflow를 추가했다.

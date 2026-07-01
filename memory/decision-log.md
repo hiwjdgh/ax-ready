@@ -50,6 +50,12 @@
 - 이유: Git tag, release note, npm version을 연결해 배포 이력을 추적하기 쉽다.
 - 영향: repository secret `NPM_TOKEN`이 필요하며, workflow는 `npm publish --provenance`를 사용한다.
 
+## 2026-07-01: version bump와 GitHub Release 생성을 자동화한다
+
+- 결정: `.github/workflows/release.yml`을 추가해 version bump, commit, tag, GitHub Release 생성을 자동화한다.
+- 이유: 사용자가 로컬에서 `npm version`, `git push`, tag push, release note 작성을 반복하지 않기 위해서다.
+- 영향: 배포 시 GitHub Actions의 `Release` workflow에서 `patch`, `minor`, `major` 중 하나만 선택하면 된다.
+
 ## 2026-07-01: npm package name은 `ax-ready`로 확정한다
 
 - 결정: npm package name은 scoped package가 아닌 `ax-ready`를 사용한다.

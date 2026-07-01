@@ -86,6 +86,7 @@ npm pack --dry-run
 GitHub Actions는 PR/push 검증용 CI와 npm publish workflow로 나뉜다.
 
 - `.github/workflows/ci.yml`
+- `.github/workflows/release.yml`
 - `.github/workflows/npm-publish.yml`
 
 GitHub와 npm 배포 절차는 [docs/release-strategy.md](docs/release-strategy.md)를 따른다.

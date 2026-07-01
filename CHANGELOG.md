@@ -13,3 +13,4 @@
 - GitHub 및 npm 배포 전략 문서를 추가했다.
 - GitHub Actions CI와 npm publish workflow를 분리해 추가했다.
 - 사용자 프로젝트 산출물에 프로젝트 구조, 파일 역할, AI Agent Coding 준비도, DB 지식 요청 템플릿을 추가했다.
+- version bump, tag, GitHub Release 생성을 자동화하는 release workflow를 추가했다.
