@@ -1,6 +1,6 @@
 {
   "name": "ax-ready",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "AI Agent 코딩이 가능하도록 기존 프로젝트를 준비하는 스킬",
   "license": "MIT",
   "type": "commonjs",
