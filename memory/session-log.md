@@ -14,3 +14,4 @@
 - npm 배포를 위해 `package.json`과 설치 전용 CLI `bin/ax-ready.js`를 추가했다.
 - GitHub source of truth, npm install channel 기준의 release strategy 문서를 추가했다.
 - GitHub Actions CI와 npm publish workflow를 추가했다.
+- 앞으로 수정 작업 후 검증이 통과하면 커밋까지 진행한다는 운영 규칙을 추가했다.

@@ -49,3 +49,9 @@
 - 결정: GitHub Release가 published 상태가 되면 npm publish workflow를 실행한다.
 - 이유: Git tag, release note, npm version을 연결해 배포 이력을 추적하기 쉽다.
 - 영향: repository secret `NPM_TOKEN`이 필요하며, workflow는 `npm publish --provenance`를 사용한다.
+
+## 2026-07-01: 수정 후 자동 커밋까지 진행한다
+
+- 결정: Agent가 이 저장소를 수정하면 검증 후 커밋까지 진행한다.
+- 이유: 사용자는 AX Ready를 지속적으로 업데이트하면서 변경 이력이 자동으로 남기를 원한다.
+- 영향: 커밋 전 변경 범위를 확인하고, 현재 작업에서 직접 수정한 파일만 stage한다. 사용자 기존 변경은 임의로 포함하지 않는다.
