@@ -11,7 +11,9 @@ AX Ready는 AI 시대 이전에 만들어졌거나 문서화가 부족한 소프
 - `AGENTS.md`: Agent 공통 setup, architecture, editing rule, validation step.
 - `CLAUDE.md`: Claude Code용 adapter 지침.
 - `GEMINI.md`: Gemini 계열 Agent용 adapter 지침.
-- `docs/`: 프로젝트 개요, 아키텍처, 개발, 테스트, Agent workflow 문서.
+- `docs/`: 프로젝트 개요, 아키텍처, 구조, 파일 역할, 개발, 테스트, Agent workflow 문서.
+- `docs/readiness/`: 전체 프로젝트와 페이지/API 단위 AI Agent Coding 준비도.
+- `docs/db/`: DB 접근이 감지된 프로젝트에서만 생성되는 DB 지식과 required knowledge.
 - 오픈소스 파일: contributing guide, security policy, issue template, PR template, CI 권장사항.
 
 ## 사용법
@@ -61,7 +63,7 @@ Use $ax-ready to prepare this project for reliable AI agent coding.
 | `agents/openai.yaml` | 스킬 discovery를 위한 UI 메타데이터. |
 | `bin/ax-ready.js` | npm 설치용 CLI. 프로젝트 분석에는 사용하지 않는다. |
 | `memory/` | AX Ready 프로젝트 자체의 지속 메모리와 의사결정 기록. |
-| `references/` | readiness 체크리스트, 산출물 배치 기준, 언어/프레임워크별 분석 기준. |
+| `references/` | readiness 체크리스트, 산출물 배치 기준, DB 지식 수집 기준, 준비도 산정 기준, 언어/프레임워크별 분석 기준. |
 | `assets/templates/` | 대상 프로젝트에 맞게 수정해 적용할 한국어 템플릿. |
 | `package.json` | npm 배포 설정. |
 | `docs/release-strategy.md` | GitHub 및 npm 배포 전략. |
@@ -71,6 +73,8 @@ Use $ax-ready to prepare this project for reliable AI agent coding.
 이 프로젝트는 실행 스크립트보다 스킬 지침과 reference 문서를 중심으로 발전시킨다.
 
 새 언어 또는 프레임워크 지원을 추가할 때는 `references/frameworks/`에 분석 기준 문서를 추가하고, `SKILL.md`의 번들 리소스 목록에 연결한다.
+
+사용자 프로젝트 산출물은 Agent 지침 파일만으로 끝나지 않는다. AX Ready는 프로젝트 구조, 파일 역할, 전체/페이지/API 단위 AI Agent Coding 준비도, DB 접근 감지 시 필요한 DB 지식 요청 목록까지 생성하도록 발전시킨다.
 
 배포 전 확인:
 

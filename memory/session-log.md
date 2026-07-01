@@ -17,3 +17,5 @@
 - 앞으로 수정 작업 후 검증이 통과하면 커밋까지 진행한다는 운영 규칙을 추가했다.
 - GitHub와 npm 최초 배포가 완료되었고, npm package name은 `ax-ready`로 확정되었다.
 - npm package description은 한국어로 유지한다.
+- 사용자 프로젝트 산출물 규칙에 `docs/readiness/`와 조건부 `docs/db/`를 추가했다.
+- DB 지식이 부족하면 사용자에게 DDL/stored procedure/business rule을 요청하고 `docs/db/required-knowledge.md`에 남기도록 정리했다.

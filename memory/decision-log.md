@@ -62,6 +62,18 @@
 - 이유: 초기 배포 전략이 한국어 우선이기 때문이다.
 - 영향: `package.json`의 한국어 description 변경은 의도된 배포 변경으로 취급한다.
 
+## 2026-07-01: 사용자 프로젝트 산출물에 준비도와 DB 지식 규칙을 포함한다
+
+- 결정: AX Ready는 사용자 프로젝트에 `docs/readiness/`와 조건부 `docs/db/` 산출물을 만들도록 규칙과 템플릿을 제공한다.
+- 이유: 레거시 프로젝트는 Agent 파일만으로 전환 가능성을 판단하기 어렵고, 페이지/API별 준비도와 DB 지식 coverage가 필요하다.
+- 영향: `references/readiness-scoring.md`, `references/db-knowledge.md`, readiness/db 템플릿을 추가한다.
+
+## 2026-07-01: DB 지식은 감지된 경우에만 요청하고 문서화한다
+
+- 결정: 사용자 프로젝트에서 DB 접근이 감지된 경우에만 `docs/db/`를 만든다.
+- 이유: 프론트엔드 전용 프로젝트나 DB가 없는 프로젝트에 불필요한 산출물을 만들지 않기 위해서다.
+- 영향: DB DDL, stored procedure definition, relationship, status/code 의미가 부족하면 `docs/db/required-knowledge.md`에 요청 목록을 남긴다.
+
 ## 2026-07-01: 수정 후 자동 커밋까지 진행한다
 
 - 결정: Agent가 이 저장소를 수정하면 검증 후 커밋까지 진행한다.

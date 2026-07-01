@@ -34,6 +34,29 @@
 - formatting convention이 문서화되어 있거나 도구로 강제된다.
 - error handling, logging, configuration convention이 보이면 문서화되어 있다.
 
+## 구조와 파일 역할
+
+- `docs/project-structure.md`에 디렉터리와 모듈 경계가 설명되어 있다.
+- `docs/file-roles.md`에 핵심 파일의 역할과 수정 주의점이 설명되어 있다.
+- 페이지/API/기능 단위 entrypoint가 식별되어 있다.
+- generated, vendored, build output 경로가 구분되어 있다.
+
+## AI Agent Coding 준비도
+
+- `docs/readiness/project-readiness.md`에 전체 프로젝트 준비도가 있다.
+- 프론트엔드 프로젝트는 주요 페이지별 준비도가 있다.
+- 백엔드 프로젝트는 주요 API별 준비도가 있다.
+- 풀스택 프로젝트는 페이지와 API 연결 단위 준비도가 있다.
+- 준비도는 확인된 사실, 부족한 정보, 위험 영역, 다음 action을 함께 기록한다.
+
+## DB 지식
+
+- DB 접근이 없으면 `docs/db/`를 만들지 않는다.
+- DB 접근이 감지되면 `docs/db/`를 만든다.
+- DDL, stored procedure definition, relationship, 상태값 의미를 모르면 추측하지 않는다.
+- 부족한 DB 지식은 `docs/db/required-knowledge.md`에 요청 목록으로 남긴다.
+- 사용자 제공 DDL에는 secret이나 실제 개인정보 row가 포함되지 않도록 안내한다.
+
 ## 오픈소스 Readiness
 
 - License가 있다.
